@@ -1,0 +1,68 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://getty104.github.io/ruby-wasm-vdom/index.js"></script>
+    <script type="text/ruby">
+
+module Kimariji
+  # NOTE: 引数argはString
+  def self.candidate_下の句s(arg)
+    return ['きりたちのほるあきのゆふくれ'] if arg[0] == 'む'
+    return [] if arg == ''
+    上の句と下の句のペア = [
+      ['さびしさに', 'いつこもおなしあきのゆふくれ'],
+      ['すみのえの', 'ゆめのかよひちひとめよくらむ'],
+      ['ほととぎす', 'たたありあけのつきそのこれる'],
+      ['むらさめの', 'きりたちのほるあきのゆふくれ'],
+      ['めぐりあいて', 'くもかくれにしよはのつきかな'],
+
+      ['うかりける', 'はけしかれとはいのらぬものを'],
+      ['うらみわび', 'こひにくちなむなこそをしけれ'],
+      ['つきみれば', 'わかみひとつのあきにはあらねと'],
+      ['つくばねの', 'こひそつもりてふちとなりぬる'],
+    ]
+
+    answer = []
+
+    上の句と下の句のペア.map do |上の句, 下の句|
+      if 上の句.start_with?(arg)
+        answer << 下の句
+      end
+    end
+
+    answer
+  end
+end
+
+      state = {
+        word: "",
+        candidates: [],
+      }
+
+      actions = {
+        candidates: ->(state, value) {
+          state[:word] = value
+          state[:candidates] = Kimariji.candidate_下の句s(value[:currentTarget][:value].to_s)
+        },
+      }
+
+      view = ->(state, actions) {
+        h(:div, {}, [
+          h(:label, {}, ["上の句 : "]),
+          h(:input, { oninput: ->(e) { actions[:candidates].call(state, e) } }, []),
+          h(:p, {}, ["下の句の候補は #{state[:candidates].inspect}"])
+        ])
+      }
+
+      App.new(
+        el: "#app",
+        state:,
+        view:,
+        actions:
+      )
+    </script>
+  </body>
+</html>
