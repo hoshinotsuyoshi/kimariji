@@ -8,6 +8,10 @@ RSpec.describe Kimariji do
   end
 
   describe '1文字目が決まり字(す など)' do
+    it '引数が"さ"のとき 候補を1つ返す' do
+      expect(Kimariji.candidate_下の句s('さ')).to eq(['いつこもおなしあきのゆふくれ'])
+    end
+
     it '引数が"す"のとき 候補を1つ返す' do
       expect(Kimariji.candidate_下の句s('す')).to eq(['ゆめのかよひちひとめよくらむ'])
     end
