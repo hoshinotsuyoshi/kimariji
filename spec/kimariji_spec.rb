@@ -43,8 +43,8 @@ RSpec.describe Kimariji do
   end
 
   describe 'クレームの件' do
-    it '引数が"むひひひひ"のとき きりたちのほる...が返ってしまう' do
-      expect(Kimariji.candidate_下の句s('むひひひひ')).to eq(['きりたちのほるあきのゆふくれ'])
+    it '引数が"むひひひひ"のとき 空配列が返る' do
+      expect(Kimariji.candidate_下の句s('むひひひひ')).to eq([])
     end
   end
 end
