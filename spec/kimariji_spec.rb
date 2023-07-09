@@ -2,8 +2,8 @@
 
 RSpec.describe Kimariji do
   describe '空文字' do
-    it '引数が空文字のとき 空でない配列を返す' do
-      expect(Kimariji.candidate_下の句s('')).not_to be_empty
+    it '引数が空文字のとき 空配列を返す' do
+      expect(Kimariji.candidate_下の句s('')).to be_empty
     end
   end
 
