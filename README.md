@@ -1,33 +1,78 @@
-# Kimariji
+# これはなに
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kimariji`. To experiment with that code, run `bin/console` for an interactive prompt.
+テストとgit commitの粒度などについて議論するためのライブコーディング(?) 用のrepoです
 
-TODO: Delete this and the text above, and describe your gem
+#  題材:「Kimariji(決まり字)」について
 
-## Installation
+### 百人一首とは
 
-Install the gem and add to the application's Gemfile by executing:
+* 上の句を読んで 下の句を取る「かるた」
+* 例
+    * 上の句「ちはやぶる」 -> 下の句 「からくれなゐにみつくくるとは」
+    * 上の句 = 読み札, 下の句 = 取り札
+* 上の句と下の句が100ペアある
+*  暗記ゲー かつ 条件反射ゲー
 
-    $ bundle add kimariji
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+### 決まり字とは
 
-    $ gem install kimariji
+「上の句」が読まれ始めてから「下の句」を取って良い事が確定するまでの先頭の数文字のことを「決まり字」と呼ぶ。
 
-## Usage
+たとえば「ち」で始まる歌は **3つある**。 太字で書いた部分が決まり字。
 
-TODO: Write usage instructions here
+* 「**ちぎりお**きし」 -> 「あはれことしのあきもいぬめり」
+* 「**ちぎりき**な」 ->「すゑのまつやまなみこさしとは」
+* 「**ちは**やぶる」 -> 「からくれなゐにみつくくるとは」
 
-## Development
+# シナリオ
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## 今回のシナリオ
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+* 上の句を頭から入力すると下の句の候補をすべて出してくれるサイトを開発しています
+    *   https://hoshinotsuyoshi.github.io/kimariji/ 
+* 現在は 全100ペアではなく一部のペアのみに対応しています。
+* 要件追加のたびに同僚からプルリクが来るのでレビューをします
 
-## Contributing
+以下のissueに取り組みます。 2個か3個できればいいかなと思っています
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/kimariji.
+----
 
-## License
+↑ここまで読んでいただけると嬉しいです
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+ここから先は作成中です
+
+----
+
+## issue(作成中)
+
+
+### issueその1
+
+タイトル:  空文字を渡したときに全部返って来ちゃう問題を対応する
+
+空文字を渡したら 空配列[] が返ってきてほしい
+
+
+
+###  issueその2
+
+タイトル: 「む」の最適化
+
+「む」を入力したときの表示を、特に速くしてほしい
+
+------
+
+月日は流れ...
+
+------
+
+###  issueその3
+
+タイトル:「むひひひひ」と入れると「'きりたちのほるあきのゆふくれ'」 が候補に出てきてしまう
+
+無い上の句を入れた場合は 空配列[] が返ってきてほしい
+
+
+-------
+
+以上
