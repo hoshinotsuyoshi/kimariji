@@ -41,4 +41,10 @@ RSpec.describe Kimariji do
       expect(Kimariji.candidate_下の句s('うら')).to eq(['こひにくちなむなこそをしけれ'])
     end
   end
+
+  describe 'クレームの件' do
+    it '引数が"むひひひひ"のとき きりたちのほる...が返ってしまう' do
+      expect(Kimariji.candidate_下の句s('むひひひひ')).to eq(['きりたちのほるあきのゆふくれ'])
+    end
+  end
 end
