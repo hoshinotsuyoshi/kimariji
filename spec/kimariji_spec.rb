@@ -19,6 +19,10 @@ RSpec.describe Kimariji do
     it '引数が"む"のとき 候補を1つ返す' do
       expect(Kimariji.candidate_下の句s('む')).to eq(['きりたちのほるあきのゆふくれ'])
     end
+
+    it '引数が"め"のとき 候補を1つ返す' do
+      expect(Kimariji.candidate_下の句s('め')).to eq(['くもかくれにしよはのつきかな'])
+    end
   end
 
   describe '2文字目が決まり字(う,つ など)' do
