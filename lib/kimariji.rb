@@ -5,7 +5,7 @@ require_relative 'kimariji/version'
 module Kimariji
   # NOTE: 引数argはString
   def self.candidate_下の句s(arg)
-    return ['きりたちのほるあきのゆふくれ'] if arg[0] == 'む'
+    return ['きりたちのほるあきのゆふくれ'] if arg == 'む'
     return [] if arg == ''
     上の句と下の句のペア = [
       ['さびしさに', 'いつこもおなしあきのゆふくれ'],
